@@ -87,10 +87,10 @@ for j = 1:length(lambda_set)
         shadowing_DB_Grid = zeros(lambda,1);
         shadowing_Grid = zeros(lambda,1);
         for i = 1 : lambda
-            if (sqrt(Location(i,1)^2 + Location(i,2)^2) > 1499)
+            if (sqrt(Location(i,1)^2 + Location(i,2)^2) >= 2500)
                 shadowing_DB_Grid(i) = normrnd(0, sigma);
             else
-                shadowing_DB_Grid(i) = shadowField(round(Location(i,1)) + 1500, round(Location(i,2))+1500) * sigma;
+                shadowing_DB_Grid(i) = shadowField(round(Location(i,1)) + 2500, round(Location(i,2))+2500) * sigma;
             end
             shadowing_Grid(i) = 10^(shadowing_DB_Grid(i)/10);
         end
@@ -142,10 +142,10 @@ for j = 1:length(lambda_set)
         shadowing = zeros(N(1),1);
         
         for i = 1 : N(1)
-            if sqrt(round(BS_position(i,1))^2 + round(BS_position(i,2))^2) >= 1500
+            if sqrt(round(BS_position(i,1))^2 + round(BS_position(i,2))^2) >= 2500
                 shadowing_DB(i) = normrnd(0, sigma);
             else
-                shadowing_DB(i) = B(round(BS_position(i,1))+1500, round(BS_position(i,2))+1500)*sigma;
+                shadowing_DB(i) = B(round(BS_position(i,1))+2500, round(BS_position(i,2))+2500)*sigma;
             end
             shadowing(i) = 10^(shadowing_DB(i)/10);
         end
