@@ -27,4 +27,4 @@ mkdir -p dat/ShadowField
 
 # Run code
 R --no-save --no-restore CMD BATCH exampleR.R "output/exampleR-$PBS_ARRAYID.Rout"
-$MATLAB -nodisplay -r "RandomOutageProbExp,exit"
+$MATLAB -nodisplay -r "GridVSRandomOutageProb,exit"
