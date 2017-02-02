@@ -14,7 +14,7 @@ if [[ ! -z "$PBS_JOBID" ]]; then
 fi
 
 # Go to the right directory
-cd $SCRATCH/CorrelatedShadowFadingPerformance
+cd $SCRATCH/GridVSRandom	
 
 # Create 'dat' directory if it does not exist
 mkdir -p dat
