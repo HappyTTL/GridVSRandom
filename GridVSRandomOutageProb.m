@@ -11,7 +11,7 @@ N0 = -104;
 lambda_upper = 100; %% Maximal density of a 1000*1000 area
 lambda_set = [9 25];
 sigma = 8; %% standard deviation of correlated shadow fading
-DeCorrDis = 200;
+DeCorrDis = 20;
 P = 40;
 
 
