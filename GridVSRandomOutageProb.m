@@ -73,7 +73,7 @@ for j = 1:length(lambda_set)
             PL_DB_Grid(i) = 10*log10(PL_Grid(i));
             %             Relative_Dis(i,j,:) = [MU_x(i) - Location(j,1) MU_y(i) - Location(j,2)];
         end
-        
+        [Grid_Dis,Grid_NB] = min(dis_Grid);
         %%%%%%%%%%%%%%%%%%%%%%%Rayleigh Fading%%%%%%%%%%%%%%%%%
         %     for j = 1 : n^2
         %         x = sqrt(1/2).*randn(1);
@@ -115,8 +115,8 @@ for j = 1:length(lambda_set)
         
         [max_SINR_Grid(n), max_SINR_index_Grid(n)] = max(SINR_DB_Grid);
         [max_SIR_Grid(n), max_SIR_index_Grid(n)] = max(SIR_DB_Grid);
-        NB_SINR_Grid(n) = SINR_DB_Grid(floor(lambda/2) + 1);
-        NB_SIR_Grid(n) = SIR_DB_Grid(floor(lambda/2) + 1);
+        NB_SINR_Grid(n) = SINR_DB_Grid(Grid_NB);
+        NB_SIR_Grid(n) = SIR_DB_Grid(Grid_NB);
         
         BS_points = lambda_upper;
         BS_position_X = rand(lambda_upper,1).*r;
